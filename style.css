@@ -1,71 +1,279 @@
-body,
-ul,
-li, p{
-    margin: 0;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
+button{
     padding: 0;
 }
-ul{
-    list-style: none;
+.txt-hide {
+	position: absolute;
+	clip: rect(0 0 0 0);
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
 }
+*{
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
 body{
     background-color: #EAE8FE;
-    ;
 }
-.vending_machine{
-    width: 760px;
+.cont-header{
+    width: 386px;
     margin: 0 auto;
 }
-.header_logo{
-    margin: 0 auto;
+.cont-header img{
     width: 386px;
 }
-.section_area{
-    display: flex;
-    width: 750px;
+.wrapper{
+    width: 748px;
     margin: 0 auto;
-    /* top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
+    padding-top: 70px;
+    /* display: flex; */
+}
+.wrapper .cont-left{
+    float: left;
+    width: 360px;
+    /* height: 545px; */
+    background-color: #FFFFFF;
+    margin-right: 28px;
+    padding: 0 27px;
+    box-sizing: border-box;
+    padding-bottom: 36px;
+}
 
+.cont-left .list-ul{
+    margin-top: 31px;
 }
-.section_left{
-    margin: 20px;
-    width: 360px;
-    height: 545px;
-    background-color: #FFFFFF;
-}
-.section_right{
-    margin: 20px;
-}
-.section_right .right_top{
-    width: 360px;
-    height: 50px;
-    background-color: #FFFFFF;
-}
-.section_right .right_bottom{
-    width: 360px;
-    height: 474px;
-    background-color: #FFFFFF;
-}
-.cola_section{
-    display: flex;
-    flex-wrap: wrap;
-    
-}
-.cola_wrapper{
+.list-li{
+    float: left;
     width: 94px;
-    height: 130px;
-    border: 1px solid #DBDBDB;
+    box-sizing: border-box;
+}
+.list-li:nth-child(1),
+.list-li:nth-child(2),
+.list-li:nth-child(4),
+.list-li:nth-child(5){
+    margin-right: 12px;
+    margin-bottom: 12px;
+}
+.btn-cola{
+    width: 94px;
+    background-color: #FFFFFF;
+    /* border: 1px solid #c4c4c4; */
+    border: none;
     border-radius: 10px;
-    box-shadow: 5px;
+    box-sizing: border-box;
+    position: relative;
+    filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.2));
 }
-.cola_img{
-    width: 27.69px;
-    height: 50.22px;
+.btn-cola.sold-out::after{
+    content: url('images/sold_out.svg');
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
 }
-.cola_name{
+.btn-cola:focus{
+    outline: 3px solid #6327FE;
+}
+.btn-cola:hover{
+    outline: 3px solid #6327FE;
+}
+.btn-cola img{
+    width: 36px;
+    margin: 10px 29px 0px 29px;
+}
+.btn-cola .cola-name{
     font-size: 9px;
+    padding: 3px 10px 7px;
+    line-height: 13px;
+    display: block;
 }
-.cola_price{
+.btn-cola .cola-price{
+    background-color: #6327FE;
+    color: #FFFFFF;
+    border-radius: 50px;
+    padding: 4px 15px 5px;
+    margin-bottom: 7px;
     font-size: 12px;
+    display: inline-block;
+    line-height: 12px;
+}
+.balance-price{
+    float: left;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-weight: 500;
+    padding: 7px 10px 6px 10px;
+    width: 200px;
+    font-size: 14px;
+    background-color: #EAE8FE;
+    margin-bottom: 11px;
+    line-height: 20px;
+}
+.balance-price::after{
+    content: '1,000원';
+    float: right;
+}
+.list-btn{
+    float: right;
+    width: 94px;
+    background-color: #FFFFFF;
+    border: 1px solid #c4c4c4;
+    border-radius: 5px;
+    padding: 6px 5px 6px 5px;
+    font-size: 13px;
+    line-height: 19px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-weight: 500;
+    box-sizing: border-box;
+}
+.list-input{
+    width: 200px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #c4c4c4;
+    line-height: 19px;
+    padding: 6px;
+    margin-bottom: 11px;
+}
+.btn-submit{
+    float: right;
+    width: 94px;
+    height: 106px;
+    background-color: #6327FE;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    /* margin-top: 12px; */
+}
+.list-scroll-ul{
+    float: left;
+    width: 200px;
+    height: 106px;
+    background-color: #EAE8FE;
+    padding: 12px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #c4c4c4;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.list-scroll-ul::-webkit-scrollbar{
+    width: 4px;
+}
+.list-scroll-ul::-webkit-scrollbar-thumb{
+    background-color: #FFFFFF;
+    height: 25%;
+    border-radius: 10px;
+}
+.list-cola{
+    width: 170px;
+    background-color: #FFFFFF;
+    margin-bottom: 6px;
+    box-sizing: border-box;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.list-cola img{
+    float: left;
+    width: 18px;
+    height: 33px;
+}
+.list-get-cola{
+    font-size: 9px;
+    line-height: 33px;
+    padding: 18px 10px;
+}
+
+
+.wrapper .cont-right{
+    float: right;
+    width: 360px;
+    overflow: hidden;
+}
+.cont-myMoney{
+    overflow: hidden;
+    margin-bottom: 20px;
+    background-color: #FFFFFF;
+}
+.cont-myMoney .text-money{
+    margin: 9px 27px;
+    padding: 6px 10px;
+    background-color: #EAE8FE;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    border-radius: 5px;
+}
+.cont-myMoney .text-money::after{
+    content: '25,000원';
+    float: right;
+}
+.cont-right .cont-getItem{
+    /* margin-top: 20px; */
+    background-color: #FFFFFF;
+}
+
+.cola-ul{
+    width: 306px;
+    height: 364px;
+    background-color: #EAE8FE;
+    border-radius: 5px;
+    margin: 0 auto;
+    border: 1px solid #c4c4c4;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+.cola-ul::-webkit-scrollbar{
+    width: 10px;
+}
+.cola-ul::-webkit-scrollbar-thumb{
+    background-color: #FFFFFF;
+    height: 25%;
+    border-radius: 10px;
+}
+.cola-items{
+    width: 276px;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+    margin: 0px 12px 6px 12px;
+    padding: 8px;
+    border-radius: 5px;
+}
+.cola-items:first-child{
+    margin: 12px 12px 6px 12px;
+}
+.cola-items img{
+    float: left;
+    width: 18px;
+    height: 33px;
+}
+.get-item{
+    font-size: 9px;
+    line-height: 33px;
+    padding: 18px 10px;
+    border-radius: 5px;
+}
+.get-item-sum{
+    float: right;
+    border: 1px solid #c4c4c4;
+    border-radius: 5px;
+    padding: 7px 11px;
+    vertical-align: middle;
+    /* text-align: center; */
+}
+.text-getItem{
+    font-weight: 700;
+    padding: 25px 0px;
+    text-align: center;
+}
+.cont-getItem .sumPrice{
+    /* float: right; */
+    text-align: right;
+    margin: 6px 26px 0px 0px;
+    padding-bottom: 25px;
+    font-size: 12px;
+    font-weight: 500;
 }
